@@ -10,20 +10,21 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0",
+    "@heroicons/react": "^2.1.0",
+    "clsx": "^2.1.0",
     "framer-motion": "^11.0.0",
-    "react-i18next": "^14.0.0",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
-    "zustand": "^4.5.0",
-    "@heroicons/react": "^2.1.0",
     "lucide-react": "^0.344.0",
-    "clsx": "^2.1.0",
-    "tailwind-merge": "^2.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.0",
+    "react-router-dom": "^6.22.0",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@types/node": "^24.0.10",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -38,4 +39,4 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
   }
-} 
+}
