@@ -136,7 +136,7 @@ const DashboardPage: React.FC = () => {
         className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-2xl p-8 text-white"
       >
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-10"></div>
         
         <div className="relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">

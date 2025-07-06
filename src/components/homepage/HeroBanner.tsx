@@ -7,7 +7,7 @@ const HeroBanner: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-10"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
