@@ -58,14 +58,6 @@ const Header: React.FC = () => {
           >
             <Link to="/home" className="flex items-center space-x-3 group">
               <img src="/logo.png" alt="Ayan Bridge Logo" className="w-12 h-12 object-contain rounded-xl shadow-lg" />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent">
-                  Ayan Bridge
-                </span>
-                <span className="text-xs text-neutral-500 dark:text-neutral-400 -mt-1">
-                  Intelligence créative
-                </span>
-              </div>
             </Link>
           </motion.div>
 
