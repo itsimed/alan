@@ -1,15 +1,9 @@
 import React from 'react'
-import { Metadata } from 'next'
-import UserCard from '@/components/dashboard/UserCard'
-import UserStatGraph from '@/components/dashboard/UserStatGraph'
-import CertificateCard from '@/components/dashboard/CertificateCard'
-import NotificationBadge from '@/components/dashboard/NotificationBadge'
-import { userData } from '@/lib/data/user'
-
-export const metadata: Metadata = {
-  title: 'Dashboard - Ayan Bridge V2',
-  description: 'Votre tableau de bord personnel',
-}
+import UserCard from '../../components/dashboard/UserCard'
+import UserStatGraph from '../../components/dashboard/UserStatGraph'
+import CertificateCard from '../../components/dashboard/CertificateCard'
+import NotificationBadge from '../../components/dashboard/NotificationBadge'
+import { userData } from '../../lib/data/user'
 
 export default function DashboardPage() {
   return (

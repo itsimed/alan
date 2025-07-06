@@ -28,7 +28,7 @@ const LanguageSelector: React.FC = () => {
   
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
   
-  const handleLanguageChange = (languageCode: string) => {
+  const handleLanguageChange = (languageCode: 'fr' | 'en' | 'ar') => {
     setLanguage(languageCode)
     i18n.changeLanguage(languageCode)
     setIsOpen(false)
@@ -90,7 +90,7 @@ const LanguageSelector: React.FC = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.05 }}
-                    onClick={() => handleLanguageChange(language.code)}
+                    onClick={() => handleLanguageChange(language.code as 'fr' | 'en' | 'ar')}
                     className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
                       currentLanguage.code === language.code
                         ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'

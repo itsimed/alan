@@ -1,15 +1,9 @@
 import React from 'react'
-import { Metadata } from 'next'
-import InvestProductCard from '@/components/capital/InvestProductCard'
-import InvestTable from '@/components/capital/InvestTable'
-import LivePitchVideo from '@/components/capital/LivePitchVideo'
-import RevenueGraph from '@/components/capital/RevenueGraph'
-import { investmentData } from '@/lib/data/investments'
-
-export const metadata: Metadata = {
-  title: 'Bridge Capital - Ayan Bridge V2',
-  description: 'Investissez dans l\'avenir de l\'éducation',
-}
+import InvestProductCard from '../../components/capital/InvestProductCard'
+import InvestTable from '../../components/capital/InvestTable'
+import LivePitchVideo from '../../components/capital/LivePitchVideo'
+import RevenueGraph from '../../components/capital/RevenueGraph'
+import { investmentData } from '../../lib/data/investments'
 
 export default function CapitalPage() {
   return (
