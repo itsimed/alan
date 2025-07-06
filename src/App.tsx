@@ -10,11 +10,11 @@ import DashboardLayout from './components/layout/DashboardLayout'
 
 // Pages
 import HomePage from './pages/HomePage'
-import MarketplacePage from './pages/MarketplacePage'
 import StudioPage from './pages/StudioPage'
 import LearnHubPage from './pages/LearnHubPage'
 import CapitalPage from './pages/CapitalPage'
 import DashboardPage from './pages/DashboardPage'
+import ProfilePage from './pages/ProfilePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -29,10 +29,10 @@ function App() {
             {/* Routes principales avec MainLayout */}
             <Route path="/" element={<MainLayout />}>
               <Route path="home" element={<HomePage />} />
-              <Route path="marketplace" element={<MarketplacePage />} />
               <Route path="studio" element={<StudioPage />} />
               <Route path="learnhub" element={<LearnHubPage />} />
               <Route path="capital" element={<CapitalPage />} />
+              <Route path="profile" element={<ProfilePage />} />
             </Route>
             
             {/* Route dashboard avec DashboardLayout */}

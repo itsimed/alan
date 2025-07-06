@@ -180,9 +180,12 @@
     "revenues": "Revenus",
     "settings": "Paramètres",
     "welcome": "Bienvenue",
-    "goodMorning": "Bonjour",
-    "goodAfternoon": "Bon après-midi",
-    "goodEvening": "Bonsoir",
+    "greeting": {
+      "morning": "Bonjour",
+      "afternoon": "Bon après-midi",
+      "evening": "Bonsoir"
+    },
+    "subtitle": "Continuez votre parcours d'apprentissage aujourd'hui",
     "welcomeMessage": "Voici un aperçu de votre progression et de vos prochaines activités",
     "activePathways": "Parcours actifs",
     "upcomingSessions": "Prochaines sessions",
@@ -198,8 +201,18 @@
     "stats": {
       "totalPurchases": "Total des achats",
       "totalRevenue": "Revenus totaux",
-      "activeCourses": "Cours actifs",
-      "completedProjects": "Projets terminés"
+      "monthlyRevenue": "Revenus mensuels",
+      "growth": "Croissance",
+      "totalStudents": "Étudiants totaux",
+      "activeStudents": "Étudiants actifs",
+      "completionRate": "Taux de réussite",
+      "averageRating": "Note moyenne",
+      "totalCourses": "Cours totaux",
+      "publishedCourses": "Cours publiés",
+      "draftCourses": "Brouillons",
+      "totalViews": "Vues totales",
+      "totalDownloads": "Téléchargements totaux",
+      "conversionRate": "Taux de conversion"
     },
     "estimatedRevenue": "Revenus estimés",
     "thisMonth": "Ce mois-ci",
@@ -212,19 +225,36 @@
     "today": "Aujourd'hui",
     "tomorrow": "Demain",
     "noUpcomingEvents": "Aucun événement à venir",
-    "startCourse": "Commencer le cours"
+    "startCourse": "Commencer le cours",
+    "revisions": {
+      "title": "Révisions & Entraînements Récents"
+    }
   },
   "profile": {
-    "viewProfile": "Voir le profil",
-    "accessDashboard": "Accéder au dashboard",
+    "title": "Mon Profil",
+    "overview": "Vue d'ensemble",
+    "courses": "Mes Cours",
+    "certificates": "Certificats",
+    "activity": "Activité",
+    "edit": "Modifier le profil",
     "settings": "Paramètres",
-    "logout": "Se déconnecter"
+    "viewProfile": "Mon profil",
+    "accessDashboard": "Accéder au tableau de bord",
+    "logout": "Déconnexion",
+    "stats": {
+      "coursesCompleted": "Cours terminés",
+      "hoursLearned": "Heures d'apprentissage",
+      "certificatesEarned": "Certificats obtenus",
+      "currentStreak": "Série actuelle",
+      "rank": "Niveau",
+      "points": "Points XP"
+    }
   },
   "notifications": {
     "title": "Notifications",
     "markAllRead": "Tout marquer comme lu",
     "noNotifications": "Aucune notification",
-    "viewAll": "Voir toutes",
+    "viewAll": "Voir toutes les notifications",
     "justNow": "À l'instant",
     "minutesAgo": "Il y a {{count}} minute",
     "minutesAgo_plural": "Il y a {{count}} minutes",
@@ -235,45 +265,63 @@
     "categories": {
       "course": "Cours",
       "revenue": "Revenus",
-      "live": "Sessions live",
+      "social": "Social",
       "system": "Système",
-      "reminder": "Rappels"
+      "calendar": "Calendrier"
     }
   },
-  "language": {
-    "selector": "Sélecteur de langue",
-    "selectLanguage": "Sélectionner une langue"
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "ar": "العربية"
   },
   "theme": {
-    "toggle": "Basculer le thème",
-    "switchToLight": "Passer au mode clair",
-    "switchToDark": "Passer au mode sombre"
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
   },
   "auth": {
-    "login": {
-      "title": "Connexion",
-      "email": "Email",
-      "password": "Mot de passe",
-      "rememberMe": "Se souvenir de moi",
-      "forgotPassword": "Mot de passe oublié ?",
-      "submit": "Se connecter",
-      "demo": "Utiliser la démo"
-    },
-    "register": {
-      "title": "Inscription",
-      "name": "Nom complet",
-      "email": "Email",
-      "password": "Mot de passe",
-      "confirmPassword": "Confirmer le mot de passe",
-      "agree": "J'accepte les conditions d'utilisation",
-      "submit": "S'inscrire"
-    }
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "forgotPassword": "Mot de passe oublié ?",
+    "rememberMe": "Se souvenir de moi",
+    "loginSuccess": "Connexion réussie",
+    "loginError": "Erreur de connexion",
+    "registerSuccess": "Inscription réussie",
+    "registerError": "Erreur d'inscription",
+    "logoutSuccess": "Déconnexion réussie",
+    "invalidCredentials": "Identifiants invalides",
+    "emailRequired": "Email requis",
+    "passwordRequired": "Mot de passe requis",
+    "passwordTooShort": "Mot de passe trop court",
+    "passwordsDontMatch": "Les mots de passe ne correspondent pas",
+    "emailInvalid": "Email invalide",
+    "emailAlreadyExists": "Cet email existe déjà",
+    "userNotFound": "Utilisateur introuvable",
+    "accountCreated": "Compte créé avec succès",
+    "welcomeBack": "Bon retour !",
+    "createAccount": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?"
   },
   "errors": {
+    "generic": "Une erreur est survenue",
     "network": "Erreur de réseau",
-    "unauthorized": "Non autorisé",
-    "notFound": "Page non trouvée",
     "serverError": "Erreur serveur",
-    "validation": "Erreur de validation"
+    "notFound": "Page non trouvée",
+    "unauthorized": "Non autorisé",
+    "forbidden": "Accès interdit",
+    "validation": "Erreur de validation",
+    "timeout": "Délai d'attente dépassé",
+    "offline": "Vous êtes hors ligne",
+    "retry": "Réessayer",
+    "goHome": "Retour à l'accueil",
+    "contactSupport": "Contacter le support"
   }
 } 

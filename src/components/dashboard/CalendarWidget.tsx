@@ -30,7 +30,7 @@ const CalendarWidget: React.FC<CalendarWidgetProps> = ({
   onEventClick
 }) => {
   const { t } = useTranslation()
-  const [currentDate, setCurrentDate] = useState(new Date())
+  const [currentDate] = useState(new Date())
   
   const getEventTypeColor = (type: CalendarEvent['type']) => {
     switch (type) {

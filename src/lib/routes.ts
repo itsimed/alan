@@ -2,10 +2,10 @@
 export const ROUTES = {
   // Pages publiques
   HOME: '/home',
-  MARKETPLACE: '/marketplace',
   STUDIO: '/studio',
   LEARN_HUB: '/learnhub',
   CAPITAL: '/capital',
+  PROFILE: '/profile',
   
   // Dashboard utilisateur
   DASHBOARD: '/dashboard',
@@ -26,11 +26,6 @@ export const MAIN_NAVIGATION = [
     path: ROUTES.HOME,
     label: 'nav.home',
     icon: 'HomeIcon',
-  },
-  {
-    path: ROUTES.MARKETPLACE,
-    label: 'nav.marketplace',
-    icon: 'ShoppingBagIcon',
   },
   {
     path: ROUTES.STUDIO,

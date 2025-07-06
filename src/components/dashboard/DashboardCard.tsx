@@ -4,8 +4,11 @@ import { clsx } from 'clsx'
 
 interface DashboardCardProps {
   title: string
-  children: React.ReactNode
+  value?: string | number
+  children?: React.ReactNode
   icon?: React.ReactNode
+  trend?: string
+  color?: 'blue' | 'green' | 'orange' | 'purple' | 'red'
   className?: string
   gradient?: boolean
   hover?: boolean
@@ -14,13 +17,24 @@ interface DashboardCardProps {
 
 const DashboardCard: React.FC<DashboardCardProps> = ({
   title,
+  value,
   children,
   icon,
+  trend,
+  color = 'blue',
   className,
   gradient = false,
   hover = true,
   onClick
 }) => {
+  const colorClasses = {
+    blue: 'text-blue-600 dark:text-blue-400',
+    green: 'text-green-600 dark:text-green-400',
+    orange: 'text-orange-600 dark:text-orange-400',
+    purple: 'text-purple-600 dark:text-purple-400',
+    red: 'text-red-600 dark:text-red-400'
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -43,20 +57,35 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
       <div className="relative p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
+          <h3 className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
             {title}
           </h3>
           {icon && (
-            <div className="text-primary-600 dark:text-primary-400">
+            <div className={colorClasses[color]}>
               {icon}
             </div>
           )}
         </div>
         
         {/* Content */}
-        <div className="text-neutral-600 dark:text-neutral-300">
-          {children}
-        </div>
+        {value && (
+          <div className="mb-2">
+            <div className="text-2xl font-bold text-neutral-900 dark:text-white">
+              {value}
+            </div>
+            {trend && (
+              <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+                {trend}
+              </div>
+            )}
+          </div>
+        )}
+        
+        {children && (
+          <div className="text-neutral-600 dark:text-neutral-300">
+            {children}
+          </div>
+        )}
       </div>
     </motion.div>
   )

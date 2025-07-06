@@ -1,183 +1,225 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Bars3Icon, 
-  XMarkIcon
+  Bars3Icon,
+  SparklesIcon,
+  BellIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+  ArrowRightOnRectangleIcon,
+  ChevronDownIcon
 } from '@heroicons/react/24/outline'
+import { useAuth } from '@/contexts/AuthContext'
 import { MAIN_NAVIGATION } from '@/lib/routes'
 import Button from '@/components/ui/Button'
-import NotificationBell from '@/components/ui/NotificationBell'
-import ProfileDropdown from '@/components/ui/ProfileDropdown'
-import LanguageSelector from '@/components/ui/LanguageSelector'
 import ThemeToggle from '@/components/ui/ThemeToggle'
-import { notifications, currentUser } from '@/lib/data/dashboardData'
+import LanguageSelector from '@/components/ui/LanguageSelector'
+import NotificationDropdown from '@/components/ui/NotificationDropdown'
+import ProfileMenu from '@/components/ui/ProfileMenu'
 
 const Header: React.FC = () => {
   const { t } = useTranslation()
   const location = useLocation()
+  const { isAuthenticated, user } = useAuth()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [notificationList, setNotificationList] = useState(notifications)
+  const [scrolled, setScrolled] = useState(false)
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
-  const handleMarkAsRead = (notificationId: string) => {
-    setNotificationList(prev => 
-      prev.map(notif => 
-        notif.id === notificationId ? { ...notif, read: true } : notif
-      )
-    )
-  }
-
-  const handleMarkAllAsRead = () => {
-    setNotificationList(prev => 
-      prev.map(notif => ({ ...notif, read: true }))
-    )
-  }
-
-  const handleNotificationClick = (notification: any) => {
-    if (notification.actionUrl) {
-      window.location.href = notification.actionUrl
+  // Effet de scroll pour changer l'apparence de la navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
     }
-  }
-
-  const handleLogout = () => {
-    // Logique de déconnexion
-    console.log('Déconnexion...')
-  }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200 dark:bg-neutral-900/80 dark:border-neutral-700">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20 border-b border-neutral-200/50 dark:border-neutral-700/50' 
+          : 'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-b border-neutral-200/30 dark:border-neutral-700/30'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/home" className="flex items-center space-x-2">
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              className="w-8 h-8 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center"
-            >
-              <span className="text-white font-bold text-sm">A</span>
-            </motion.div>
-            <span className="text-xl font-bold text-neutral-900 dark:text-white">
-              Ayan Bridge
-            </span>
-          </Link>
+        <div className="flex items-center justify-between h-16">
+          {/* Logo avec image */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-3"
+          >
+            <Link to="/home" className="flex items-center space-x-3 group">
+              <img src="/logo.png" alt="Ayan Bridge Logo" className="w-12 h-12 object-contain rounded-xl shadow-lg" />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent">
+                  Ayan Bridge
+                </span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400 -mt-1">
+                  Intelligence créative
+                </span>
+              </div>
+            </Link>
+          </motion.div>
 
-          {/* Navigation Desktop */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {MAIN_NAVIGATION.map((item) => (
+          {/* Navigation Desktop avec indicateur de progression */}
+          <nav className="hidden lg:flex items-center space-x-1">
+            {MAIN_NAVIGATION.map((item, index) => (
               <motion.div
                 key={item.path}
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative"
               >
                 <Link
                   to={item.path}
-                  className={`text-sm font-medium transition-colors relative ${
+                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                     location.pathname === item.path
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white'
+                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                      : 'text-neutral-700 hover:text-blue-600 dark:text-neutral-300 dark:hover:text-blue-400 hover:bg-neutral-50 dark:hover:bg-neutral-800'
                   }`}
                 >
                   {t(item.label)}
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-orange-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={false}
+                  />
                 </Link>
               </motion.div>
             ))}
           </nav>
 
-          {/* Actions */}
+          {/* Actions utilisateur */}
           <div className="flex items-center space-x-2">
-            {/* Language Selector */}
-            <LanguageSelector />
+            {/* Contrôles */}
+            <div className="flex items-center space-x-1">
+              {/* Theme Toggle avec animation */}
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <ThemeToggle />
+              </motion.div>
 
-            {/* Theme Toggle */}
-            <ThemeToggle />
+              {/* Language Selector avec animation */}
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <LanguageSelector />
+              </motion.div>
 
-            {/* Notifications */}
-            <NotificationBell
-              notifications={notificationList}
-              onMarkAsRead={handleMarkAsRead}
-              onMarkAllAsRead={handleMarkAllAsRead}
-              onNotificationClick={handleNotificationClick}
-            />
+              {/* Notifications avec badge animé */}
+              {isAuthenticated && (
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="relative"
+                >
+                  <NotificationDropdown />
+                </motion.div>
+              )}
 
-            {/* Profile Dropdown */}
-            <ProfileDropdown
-              user={currentUser}
-              onLogout={handleLogout}
-            />
+              {/* Profile Menu avec avatar animé */}
+              {isAuthenticated && (
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="relative"
+                >
+                  <ProfileMenu userName={user?.name || 'Utilisateur'} />
+                </motion.div>
+              )}
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                icon={isMobileMenuOpen ? <XMarkIcon className="w-5 h-5" /> : <Bars3Icon className="w-5 h-5" />}
-                onClick={toggleMobileMenu}
-              />
+              {/* Bouton mobile avec animation */}
+              <motion.div 
+                className="lg:hidden"
+                whileHover={{ scale: 1.05 }} 
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  icon={<Bars3Icon className="w-5 h-5" />}
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="relative overflow-hidden"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-orange-500/10"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: '100%' }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Button>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menu Mobile avec animations améliorées */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700"
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="lg:hidden bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl border-t border-neutral-200/50 dark:border-neutral-700/50"
           >
-            <div className="px-4 py-4 space-y-2">
-              {MAIN_NAVIGATION.map((item) => (
+            <div className="px-4 py-3 space-y-1">
+              {MAIN_NAVIGATION.map((item, index) => (
                 <motion.div
                   key={item.path}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ delay: index * 0.05 }}
                 >
                   <Link
                     to={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                       location.pathname === item.path
-                        ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
-                        : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                        ? 'text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/20 shadow-sm'
+                        : 'text-neutral-700 hover:text-blue-600 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:text-blue-400 dark:hover:bg-neutral-800'
                     }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {t(item.label)}
                   </Link>
                 </motion.div>
               ))}
               
-              {/* Mobile Actions */}
-              <div className="pt-4 border-t border-neutral-200 dark:border-neutral-700">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                    {t('common.preferences')}
-                  </span>
-                  <div className="flex items-center space-x-2">
-                    <LanguageSelector />
-                    <ThemeToggle />
-                  </div>
-                </div>
-              </div>
+              {/* Lien profil mobile */}
+              {isAuthenticated && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: MAIN_NAVIGATION.length * 0.05 }}
+                >
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-3 rounded-lg text-base font-medium text-neutral-700 hover:text-blue-600 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:text-blue-400 dark:hover:bg-neutral-800 transition-all duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Mon Profil
+                  </Link>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }
 

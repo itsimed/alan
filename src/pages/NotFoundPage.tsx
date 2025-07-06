@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { 
   ExclamationTriangleIcon,
@@ -10,8 +9,6 @@ import {
 import Button from '@/components/ui/Button'
 
 const NotFoundPage: React.FC = () => {
-  const { t } = useTranslation()
-
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center">
       <div className="max-w-md mx-auto text-center px-4">

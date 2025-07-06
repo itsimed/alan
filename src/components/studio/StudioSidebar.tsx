@@ -1,128 +1,179 @@
-'use client'
-
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { 
-  DocumentTextIcon,
-  PaintBrushIcon,
-  SparklesIcon,
-  PencilIcon,
-  ShareIcon,
-  PhotoIcon,
-  VideoCameraIcon,
-  MicrophoneIcon
+  PlusIcon,
+  ChatBubbleLeftRightIcon,
+  HeartIcon,
+  Cog6ToothIcon,
+  FolderIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
+import { mockConversations } from '@/lib/data'
 
-const StudioSidebar: React.FC = () => {
-  const [activeStep, setActiveStep] = useState(0)
+interface StudioSidebarProps {
+  activeTab: string
+  onTabChange: (tab: string) => void
+  onConversationSelect: (conversationId: string) => void
+  isCollapsed?: boolean
+}
 
-  const steps = [
-    { id: 0, title: 'Type de produit', icon: DocumentTextIcon, completed: true },
-    { id: 1, title: 'Thème', icon: PaintBrushIcon, completed: true },
-    { id: 2, title: 'IA Assistant', icon: SparklesIcon, completed: false },
-    { id: 3, title: 'Éditer', icon: PencilIcon, completed: false },
-    { id: 4, title: 'Publier', icon: ShareIcon, completed: false }
+const StudioSidebar: React.FC<StudioSidebarProps> = ({
+  activeTab,
+  onTabChange,
+  onConversationSelect,
+  isCollapsed = false
+}) => {
+  const sidebarItems = [
+    {
+      id: 'new-session',
+      label: 'Nouvelle session',
+      icon: PlusIcon,
+      color: 'text-blue-600 dark:text-blue-400'
+    },
+    {
+      id: 'conversations',
+      label: 'Mes conversations',
+      icon: ChatBubbleLeftRightIcon,
+      color: 'text-green-600 dark:text-green-400'
+    },
+    {
+      id: 'favorites',
+      label: 'Favoris',
+      icon: HeartIcon,
+      color: 'text-red-600 dark:text-red-400'
+    },
+    {
+      id: 'projects',
+      label: 'Projets',
+      icon: FolderIcon,
+      color: 'text-purple-600 dark:text-purple-400'
+    },
+    {
+      id: 'ai-tools',
+      label: 'Outils IA',
+      icon: SparklesIcon,
+      color: 'text-orange-600 dark:text-orange-400'
+    },
+    {
+      id: 'settings',
+      label: 'Paramètres',
+      icon: Cog6ToothIcon,
+      color: 'text-gray-600 dark:text-gray-400'
+    }
   ]
 
-  const tools = [
-    { title: 'Texte', icon: DocumentTextIcon, color: 'text-blue-600' },
-    { title: 'Image', icon: PhotoIcon, color: 'text-green-600' },
-    { title: 'Vidéo', icon: VideoCameraIcon, color: 'text-red-600' },
-    { title: 'Audio', icon: MicrophoneIcon, color: 'text-purple-600' }
-  ]
+  const favoriteConversations = mockConversations.filter(conv => conv.favorite)
 
   return (
-    <div className="w-80 bg-white dark:bg-neutral-800 border-r border-neutral-200 dark:border-neutral-700 flex flex-col">
-      {/* Steps */}
-      <div className="p-6 border-b border-neutral-200 dark:border-neutral-700">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
-          Étapes de création
-        </h3>
-        <div className="space-y-3">
-          {steps.map((step) => (
-            <button
-              key={step.id}
-              onClick={() => setActiveStep(step.id)}
-              className={`w-full flex items-center p-3 rounded-lg transition-colors duration-200 ${
-                activeStep === step.id
-                  ? 'bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300'
-                  : 'hover:bg-neutral-100 dark:hover:bg-neutral-700'
-              }`}
-            >
-              <div className={`p-2 rounded-lg mr-3 ${
-                step.completed
-                  ? 'bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400'
-                  : activeStep === step.id
-                  ? 'bg-primary-200 dark:bg-primary-800 text-primary-600 dark:text-primary-400'
-                  : 'bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400'
-              }`}>
-                <step.icon className="w-5 h-5" />
-              </div>
-              <span className={`font-medium ${
-                activeStep === step.id
-                  ? 'text-primary-700 dark:text-primary-300'
-                  : 'text-neutral-700 dark:text-neutral-300'
-              }`}>
-                {step.title}
-              </span>
-              {step.completed && (
-                <div className="ml-auto w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              )}
-            </button>
-          ))}
+    <motion.div
+      initial={{ x: -300 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+      className={`bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-700 ${
+        isCollapsed ? 'w-16' : 'w-80'
+      } flex flex-col h-full`}
+    >
+      {/* Header */}
+      <div className="p-4 border-b border-neutral-200 dark:border-neutral-700">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <SparklesIcon className="w-5 h-5 text-white" />
+          </div>
+          {!isCollapsed && (
+            <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+              Studio AI
+            </h2>
+          )}
         </div>
       </div>
 
-      {/* Tools */}
-      <div className="flex-1 p-6">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
-          Outils
-        </h3>
-        <div className="grid grid-cols-2 gap-3">
-          {tools.map((tool, index) => (
+      {/* Navigation Tabs */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="p-4 space-y-2">
+          {sidebarItems.map((item) => (
             <motion.button
-              key={tool.title}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-4 bg-neutral-50 dark:bg-neutral-700 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-600 transition-colors duration-200"
+              key={item.id}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => onTabChange(item.id)}
+              className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
+                activeTab === item.id
+                  ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
+                  : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800'
+              }`}
             >
-              <tool.icon className={`w-8 h-8 ${tool.color} mx-auto mb-2`} />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                {tool.title}
-              </span>
+              <item.icon className="w-5 h-5" />
+              {!isCollapsed && (
+                <span className="text-sm font-medium">{item.label}</span>
+              )}
             </motion.button>
           ))}
         </div>
 
-        {/* AI Suggestions */}
-        <div className="mt-8">
-          <h4 className="text-md font-semibold text-neutral-900 dark:text-white mb-3">
-            Suggestions IA
-          </h4>
-          <div className="space-y-2">
-            <div className="p-3 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900 dark:to-blue-900 rounded-lg">
-              <p className="text-sm text-purple-700 dark:text-purple-300">
-                💡 Ajouter une introduction vidéo
-              </p>
-            </div>
-            <div className="p-3 bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900 dark:to-teal-900 rounded-lg">
-              <p className="text-sm text-green-700 dark:text-green-300">
-                📊 Inclure des quiz interactifs
-              </p>
-            </div>
-            <div className="p-3 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900 dark:to-red-900 rounded-lg">
-              <p className="text-sm text-orange-700 dark:text-orange-300">
-                🎯 Définir des objectifs clairs
-              </p>
+        {/* Conversations Section */}
+        {activeTab === 'conversations' && !isCollapsed && (
+          <div className="px-4 pb-4">
+            <h3 className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-3">
+              Conversations récentes
+            </h3>
+            <div className="space-y-2">
+              {mockConversations.slice(0, 5).map((conversation) => (
+                <motion.button
+                  key={conversation.id}
+                  whileHover={{ scale: 1.01 }}
+                  onClick={() => onConversationSelect(conversation.id)}
+                  className="w-full text-left p-3 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+                >
+                  <div className="flex items-center justify-between mb-1">
+                    <h4 className="text-sm font-medium text-neutral-900 dark:text-white truncate">
+                      {conversation.title}
+                    </h4>
+                    {conversation.favorite && (
+                      <HeartIcon className="w-4 h-4 text-red-500" />
+                    )}
+                  </div>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 truncate">
+                    {conversation.lastMessage}
+                  </p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-1">
+                    {conversation.messageCount} messages
+                  </p>
+                </motion.button>
+              ))}
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Favorites Section */}
+        {activeTab === 'favorites' && !isCollapsed && (
+          <div className="px-4 pb-4">
+            <h3 className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-3">
+              Conversations favorites
+            </h3>
+            <div className="space-y-2">
+              {favoriteConversations.map((conversation) => (
+                <motion.button
+                  key={conversation.id}
+                  whileHover={{ scale: 1.01 }}
+                  onClick={() => onConversationSelect(conversation.id)}
+                  className="w-full text-left p-3 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+                >
+                  <div className="flex items-center justify-between mb-1">
+                    <h4 className="text-sm font-medium text-neutral-900 dark:text-white truncate">
+                      {conversation.title}
+                    </h4>
+                    <HeartIcon className="w-4 h-4 text-red-500" />
+                  </div>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 truncate">
+                    {conversation.lastMessage}
+                  </p>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

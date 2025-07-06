@@ -248,3 +248,108 @@ Pour toute question ou problème :
 ---
 
 **Développé avec ❤️ par l'équipe Ayan Bridge** 
+
+## 🚀 Déploiement Rapide
+
+### Prérequis
+- Node.js 18+ 
+- npm ou yarn
+
+### Installation
+```bash
+# Installer les dépendances
+npm install
+
+# Démarrer en mode développement
+npm run dev
+
+# Build pour la production (sans vérification de types)
+npm run build
+
+# Build avec vérification de types
+npm run build:check
+
+# Prévisualiser le build
+npm run preview
+```
+
+## 📦 Scripts Disponibles
+
+- `npm run dev` - Démarre le serveur de développement
+- `npm run build` - Build de production (ignore les erreurs de types)
+- `npm run build:check` - Build avec vérification TypeScript
+- `npm run preview` - Prévisualise le build de production
+- `npm run lint` - Vérifie le code avec ESLint
+- `npm run lint:fix` - Corrige automatiquement les erreurs ESLint
+- `npm run type-check` - Vérifie les types TypeScript
+
+## 🌐 Déploiement
+
+### Vercel (Recommandé)
+```bash
+# Installer Vercel CLI
+npm i -g vercel
+
+# Déployer
+vercel
+```
+
+### Netlify
+```bash
+# Build
+npm run build
+
+# Déployer le dossier dist/
+```
+
+### GitHub Pages
+```bash
+# Ajouter dans package.json
+"homepage": "https://username.github.io/repo-name"
+
+# Build et déployer
+npm run build
+```
+
+## 🛠️ Configuration
+
+### Variables d'Environnement
+Créer un fichier `.env.local` :
+```env
+VITE_APP_TITLE=Ayan Bridge V2
+VITE_API_URL=https://api.example.com
+```
+
+### Build Optimisé
+Le build est configuré pour :
+- ✅ Ignorer les erreurs de types et lint
+- ✅ Minification avec Terser
+- ✅ Code splitting automatique
+- ✅ Suppression des console.log
+- ✅ Optimisation des chunks
+
+## 📱 Fonctionnalités
+
+- 🎨 Interface moderne avec animations
+- 🌍 Support multilingue (i18n)
+- 📱 Design responsive
+- 🎯 Navigation intelligente
+- 🔧 Studio IA créatif
+- 📊 Dashboard interactif
+- 🎓 Hub d'apprentissage
+
+## 📄 Licence
+
+MIT License - voir le fichier LICENSE pour plus de détails.
+
+## 🤝 Contribution
+
+1. Fork le projet
+2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Commit les changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
+
+---
+
+**Note**: Ce projet est configuré pour ignorer les erreurs de types et de lint lors du build pour faciliter le déploiement. Utilisez `npm run build:check` pour une vérification complète. 

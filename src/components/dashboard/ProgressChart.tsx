@@ -1,13 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 
 interface ProgressChartProps {
   progress: number // 0-100
   title: string
-  subtitle?: string
+  subtitle: string
   size?: 'sm' | 'md' | 'lg'
-  color?: 'primary' | 'green' | 'orange' | 'blue'
+  color: 'green' | 'blue' | 'orange' | 'purple'
 }
 
 const ProgressChart: React.FC<ProgressChartProps> = ({
@@ -15,10 +14,8 @@ const ProgressChart: React.FC<ProgressChartProps> = ({
   title,
   subtitle,
   size = 'md',
-  color = 'primary'
+  color
 }) => {
-  const { t } = useTranslation()
-  
   const sizeClasses = {
     sm: { container: 'w-24 h-24', text: 'text-lg', stroke: 4 },
     md: { container: 'w-32 h-32', text: 'text-xl', stroke: 6 },
@@ -26,10 +23,10 @@ const ProgressChart: React.FC<ProgressChartProps> = ({
   }
   
   const colorClasses = {
-    primary: 'stroke-primary-600',
     green: 'stroke-green-600',
+    blue: 'stroke-blue-600',
     orange: 'stroke-orange-600',
-    blue: 'stroke-blue-600'
+    purple: 'stroke-purple-600'
   }
   
   const radius = 45

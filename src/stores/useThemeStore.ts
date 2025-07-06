@@ -18,7 +18,7 @@ const getSystemTheme = (): boolean => {
 }
 
 const applyTheme = (theme: Theme) => {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') return false
   
   const isDark = theme === 'system' ? getSystemTheme() : theme === 'dark'
   
@@ -34,8 +34,8 @@ const applyTheme = (theme: Theme) => {
 export const useThemeStore = create<ThemeState>()(
   persist(
     (set, get) => ({
-      theme: 'system',
-      isDark: false,
+      theme: 'system' as Theme,
+      isDark: false as boolean,
 
       setTheme: (theme: Theme) => {
         const isDark = applyTheme(theme)
@@ -56,7 +56,7 @@ export const useThemeStore = create<ThemeState>()(
       onRehydrateStorage: () => (state) => {
         if (state) {
           const isDark = applyTheme(state.theme)
-          state.isDark = isDark
+          state.isDark = isDark ?? false
         }
       },
     }

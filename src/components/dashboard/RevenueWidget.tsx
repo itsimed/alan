@@ -4,8 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { 
   ArrowTrendingUpIcon,
   ArrowTrendingDownIcon,
-  CurrencyEuroIcon,
-  EyeIcon
+  BanknotesIcon
 } from '@heroicons/react/24/outline'
 
 interface RevenueData {
@@ -23,21 +22,15 @@ interface RevenueData {
 
 interface RevenueWidgetProps {
   data: RevenueData
-  currency?: string
 }
 
-const RevenueWidget: React.FC<RevenueWidgetProps> = ({
-  data,
-  currency = '€'
-}) => {
+const RevenueWidget: React.FC<RevenueWidgetProps> = ({ data }) => {
   const { t } = useTranslation()
   
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('fr-FR', {
       style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      currency: 'EUR'
     }).format(amount)
   }
   
@@ -74,7 +67,7 @@ const RevenueWidget: React.FC<RevenueWidgetProps> = ({
           {t('dashboard.estimatedRevenue')}
         </h3>
         <button className="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg transition-colors">
-          <EyeIcon className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
+          <BanknotesIcon className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
         </button>
       </div>
       

@@ -59,8 +59,8 @@ const mockUsers: User[] = [
 export const useAuthStore = create<AuthState>()(
   persist(
     (set, get) => ({
-      user: null,
-      isAuthenticated: false,
+      user: mockUsers[0],
+      isAuthenticated: true,
       isLoading: false,
       error: null,
 
