@@ -1,0 +1,184 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "more": "More",
+    "less": "Less",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm",
+    "welcome": "Welcome",
+    "goodbye": "Goodbye"
+  },
+  "nav": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "studio": "AI Studio",
+    "learnHub": "Learn Hub",
+    "capital": "Bridge Capital",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "home": {
+    "title": "Ayan Bridge V2",
+    "subtitle": "Next-generation educational and collaborative platform",
+    "hero": {
+      "title": "Discover the future of education",
+      "subtitle": "A complete platform to learn, create and invest",
+      "cta": "Start the adventure",
+      "secondaryCta": "Learn more"
+    },
+    "features": {
+      "title": "Our features",
+      "marketplace": {
+        "title": "Marketplace",
+        "description": "Discover exceptional digital products"
+      },
+      "studio": {
+        "title": "AI Studio",
+        "description": "Create with artificial intelligence"
+      },
+      "learnHub": {
+        "title": "Learn Hub",
+        "description": "Learn with experts from around the world"
+      },
+      "capital": {
+        "title": "Bridge Capital",
+        "description": "Invest in the future of education"
+      }
+    }
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "subtitle": "Discover exceptional digital products",
+    "categories": {
+      "all": "All",
+      "courses": "Courses",
+      "templates": "Templates",
+      "tools": "Tools",
+      "books": "Books",
+      "software": "Software"
+    },
+    "filters": {
+      "price": "Price",
+      "rating": "Rating",
+      "category": "Category",
+      "author": "Author",
+      "date": "Date"
+    },
+    "sort": {
+      "newest": "Newest",
+      "oldest": "Oldest",
+      "priceLow": "Price low to high",
+      "priceHigh": "Price high to low",
+      "rating": "Rating",
+      "popularity": "Popularity"
+    }
+  },
+  "studio": {
+    "title": "AI Studio",
+    "subtitle": "Create with artificial intelligence",
+    "tools": {
+      "textGenerator": "Text Generator",
+      "imageGenerator": "Image Generator",
+      "codeGenerator": "Code Generator",
+      "designGenerator": "Design Generator"
+    },
+    "workspace": {
+      "new": "New project",
+      "save": "Save",
+      "export": "Export",
+      "share": "Share"
+    }
+  },
+  "learnHub": {
+    "title": "Ayan Learn Hub",
+    "subtitle": "Learn with experts from around the world",
+    "courses": {
+      "title": "Available courses",
+      "featured": "Featured courses",
+      "new": "New courses",
+      "popular": "Popular courses"
+    },
+    "sessions": {
+      "title": "Live sessions",
+      "upcoming": "Upcoming sessions",
+      "ongoing": "Ongoing sessions",
+      "past": "Past sessions"
+    }
+  },
+  "capital": {
+    "title": "Bridge Capital",
+    "subtitle": "Invest in the future of education",
+    "opportunities": {
+      "title": "Investment opportunities",
+      "startups": "Startups",
+      "projects": "Projects",
+      "funds": "Funds"
+    },
+    "portfolio": {
+      "title": "My portfolio",
+      "investments": "My investments",
+      "returns": "Returns",
+      "analytics": "Analytics"
+    }
+  },
+  "dashboard": {
+    "overview": "Overview",
+    "profile": "Profile",
+    "purchases": "Purchases",
+    "revenues": "Revenues",
+    "settings": "Settings",
+    "stats": {
+      "totalPurchases": "Total purchases",
+      "totalRevenue": "Total revenue",
+      "activeCourses": "Active courses",
+      "completedProjects": "Completed projects"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Login",
+      "demo": "Use demo"
+    },
+    "register": {
+      "title": "Register",
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "agree": "I agree to the terms of service",
+      "submit": "Register"
+    }
+  },
+  "errors": {
+    "network": "Network error",
+    "unauthorized": "Unauthorized",
+    "notFound": "Page not found",
+    "serverError": "Server error",
+    "validation": "Validation error"
+  }
+} 

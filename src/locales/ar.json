@@ -1,0 +1,184 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "more": "المزيد",
+    "less": "أقل",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "close": "إغلاق",
+    "open": "فتح",
+    "yes": "نعم",
+    "no": "لا",
+    "confirm": "تأكيد",
+    "welcome": "مرحباً",
+    "goodbye": "وداعاً"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "marketplace": "المتجر",
+    "studio": "استوديو الذكاء الاصطناعي",
+    "learnHub": "مركز التعلم",
+    "capital": "رأس المال",
+    "dashboard": "لوحة التحكم",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "register": "التسجيل"
+  },
+  "home": {
+    "title": "أيان بريدج V2",
+    "subtitle": "منصة تعليمية وتعاونية من الجيل القادم",
+    "hero": {
+      "title": "اكتشف مستقبل التعليم",
+      "subtitle": "منصة شاملة للتعلم والابتكار والاستثمار",
+      "cta": "ابدأ المغامرة",
+      "secondaryCta": "اعرف المزيد"
+    },
+    "features": {
+      "title": "ميزاتنا",
+      "marketplace": {
+        "title": "المتجر",
+        "description": "اكتشف منتجات رقمية استثنائية"
+      },
+      "studio": {
+        "title": "استوديو الذكاء الاصطناعي",
+        "description": "أنشئ بالذكاء الاصطناعي"
+      },
+      "learnHub": {
+        "title": "مركز التعلم",
+        "description": "تعلم مع خبراء من جميع أنحاء العالم"
+      },
+      "capital": {
+        "title": "رأس المال",
+        "description": "استثمر في مستقبل التعليم"
+      }
+    }
+  },
+  "marketplace": {
+    "title": "المتجر",
+    "subtitle": "اكتشف منتجات رقمية استثنائية",
+    "categories": {
+      "all": "الكل",
+      "courses": "الدورات",
+      "templates": "القوالب",
+      "tools": "الأدوات",
+      "books": "الكتب",
+      "software": "البرمجيات"
+    },
+    "filters": {
+      "price": "السعر",
+      "rating": "التقييم",
+      "category": "الفئة",
+      "author": "المؤلف",
+      "date": "التاريخ"
+    },
+    "sort": {
+      "newest": "الأحدث",
+      "oldest": "الأقدم",
+      "priceLow": "السعر من الأقل إلى الأعلى",
+      "priceHigh": "السعر من الأعلى إلى الأقل",
+      "rating": "التقييم",
+      "popularity": "الشعبية"
+    }
+  },
+  "studio": {
+    "title": "استوديو الذكاء الاصطناعي",
+    "subtitle": "أنشئ بالذكاء الاصطناعي",
+    "tools": {
+      "textGenerator": "مولد النصوص",
+      "imageGenerator": "مولد الصور",
+      "codeGenerator": "مولد الكود",
+      "designGenerator": "مولد التصميم"
+    },
+    "workspace": {
+      "new": "مشروع جديد",
+      "save": "حفظ",
+      "export": "تصدير",
+      "share": "مشاركة"
+    }
+  },
+  "learnHub": {
+    "title": "مركز التعلم أيان",
+    "subtitle": "تعلم مع خبراء من جميع أنحاء العالم",
+    "courses": {
+      "title": "الدورات المتاحة",
+      "featured": "الدورات المميزة",
+      "new": "الدورات الجديدة",
+      "popular": "الدورات الشائعة"
+    },
+    "sessions": {
+      "title": "الجلسات المباشرة",
+      "upcoming": "الجلسات القادمة",
+      "ongoing": "الجلسات الجارية",
+      "past": "الجلسات السابقة"
+    }
+  },
+  "capital": {
+    "title": "رأس المال",
+    "subtitle": "استثمر في مستقبل التعليم",
+    "opportunities": {
+      "title": "فرص الاستثمار",
+      "startups": "الشركات الناشئة",
+      "projects": "المشاريع",
+      "funds": "الصناديق"
+    },
+    "portfolio": {
+      "title": "محفظتي",
+      "investments": "استثماراتي",
+      "returns": "العوائد",
+      "analytics": "التحليلات"
+    }
+  },
+  "dashboard": {
+    "overview": "نظرة عامة",
+    "profile": "الملف الشخصي",
+    "purchases": "المشتريات",
+    "revenues": "الإيرادات",
+    "settings": "الإعدادات",
+    "stats": {
+      "totalPurchases": "إجمالي المشتريات",
+      "totalRevenue": "إجمالي الإيرادات",
+      "activeCourses": "الدورات النشطة",
+      "completedProjects": "المشاريع المكتملة"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "rememberMe": "تذكرني",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "submit": "تسجيل الدخول",
+      "demo": "استخدم العرض التوضيحي"
+    },
+    "register": {
+      "title": "التسجيل",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "agree": "أوافق على شروط الخدمة",
+      "submit": "التسجيل"
+    }
+  },
+  "errors": {
+    "network": "خطأ في الشبكة",
+    "unauthorized": "غير مصرح",
+    "notFound": "الصفحة غير موجودة",
+    "serverError": "خطأ في الخادم",
+    "validation": "خطأ في التحقق"
+  }
+} 

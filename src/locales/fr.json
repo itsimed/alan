@@ -1,0 +1,279 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "more": "Plus",
+    "less": "Moins",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "yes": "Oui",
+    "no": "Non",
+    "confirm": "Confirmer",
+    "welcome": "Bienvenue",
+    "goodbye": "Au revoir",
+    "completed": "terminé",
+    "remaining": "restant",
+    "join": "Rejoindre",
+    "remind": "Rappeler",
+    "preferences": "Préférences"
+  },
+  "nav": {
+    "home": "Accueil",
+    "marketplace": "Marketplace",
+    "studio": "Studio IA",
+    "learnHub": "Learn Hub",
+    "capital": "Bridge Capital",
+    "dashboard": "Tableau de bord",
+    "profile": "Voir profil",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "Inscription"
+  },
+  "home": {
+    "title": "Ayan Bridge V2",
+    "subtitle": "Plateforme éducative et collaborative de nouvelle génération",
+    "hero": {
+      "title": "Découvrez l'avenir de l'éducation",
+      "subtitle": "Une plateforme complète pour apprendre, créer et investir",
+      "cta": "Commencer l'aventure",
+      "secondaryCta": "En savoir plus"
+    },
+    "features": {
+      "title": "Nos fonctionnalités",
+      "marketplace": {
+        "title": "Marketplace",
+        "description": "Découvrez des produits numériques exceptionnels"
+      },
+      "studio": {
+        "title": "Studio IA",
+        "description": "Créez avec l'intelligence artificielle"
+      },
+      "learnHub": {
+        "title": "Learn Hub",
+        "description": "Apprenez avec des experts du monde entier"
+      },
+      "capital": {
+        "title": "Bridge Capital",
+        "description": "Investissez dans l'avenir de l'éducation"
+      }
+    }
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "subtitle": "Découvrez des produits numériques exceptionnels",
+    "categories": {
+      "all": "Tous",
+      "courses": "Cours",
+      "templates": "Modèles",
+      "tools": "Outils",
+      "books": "Livres",
+      "software": "Logiciels"
+    },
+    "filters": {
+      "price": "Prix",
+      "rating": "Note",
+      "category": "Catégorie",
+      "author": "Auteur",
+      "date": "Date"
+    },
+    "sort": {
+      "newest": "Plus récent",
+      "oldest": "Plus ancien",
+      "priceLow": "Prix croissant",
+      "priceHigh": "Prix décroissant",
+      "rating": "Note",
+      "popularity": "Popularité"
+    }
+  },
+  "studio": {
+    "title": "Studio IA",
+    "subtitle": "Créez avec l'intelligence artificielle",
+    "availableTools": "Outils disponibles",
+    "tools": {
+      "textGenerator": "Générateur de texte",
+      "textDescription": "Générez du contenu textuel avec l'IA",
+      "imageGenerator": "Générateur d'images",
+      "imageDescription": "Créez des images avec l'IA",
+      "codeGenerator": "Générateur de code",
+      "codeDescription": "Générez du code avec l'IA",
+      "designGenerator": "Générateur de design",
+      "designDescription": "Créez des designs avec l'IA"
+    },
+    "workspace": {
+      "title": "Espace de travail",
+      "prompt": "Prompt",
+      "promptPlaceholder": "Décrivez ce que vous voulez générer...",
+      "style": "Style",
+      "quality": "Qualité",
+      "result": "Résultat",
+      "generate": "Générer",
+      "generating": "Génération...",
+      "stop": "Arrêter",
+      "noResult": "Le résultat apparaîtra ici après la génération",
+      "new": "Nouveau projet",
+      "save": "Sauvegarder",
+      "export": "Exporter",
+      "share": "Partager"
+    },
+    "styles": {
+      "creative": "Créatif",
+      "professional": "Professionnel",
+      "casual": "Décontracté",
+      "technical": "Technique"
+    },
+    "quality": {
+      "standard": "Standard",
+      "high": "Haute",
+      "premium": "Premium"
+    }
+  },
+  "learnHub": {
+    "title": "Ayan Learn Hub",
+    "subtitle": "Apprenez avec des experts du monde entier",
+    "courses": {
+      "title": "Cours disponibles",
+      "featured": "Cours en vedette",
+      "new": "Nouveaux cours",
+      "popular": "Cours populaires"
+    },
+    "sessions": {
+      "title": "Sessions live",
+      "upcoming": "Prochaines sessions",
+      "ongoing": "Sessions en cours",
+      "past": "Sessions passées",
+      "live": "EN DIRECT"
+    }
+  },
+  "capital": {
+    "title": "Bridge Capital",
+    "subtitle": "Investissez dans l'avenir de l'éducation",
+    "opportunities": {
+      "title": "Opportunités d'investissement",
+      "startups": "Startups",
+      "projects": "Projets",
+      "funds": "Fonds"
+    },
+    "portfolio": {
+      "title": "Mon portefeuille",
+      "investments": "Mes investissements",
+      "returns": "Rendements",
+      "analytics": "Analyses"
+    }
+  },
+  "dashboard": {
+    "overview": "Vue d'ensemble",
+    "profile": "Profil",
+    "purchases": "Achats",
+    "revenues": "Revenus",
+    "settings": "Paramètres",
+    "welcome": "Bienvenue",
+    "goodMorning": "Bonjour",
+    "goodAfternoon": "Bon après-midi",
+    "goodEvening": "Bonsoir",
+    "welcomeMessage": "Voici un aperçu de votre progression et de vos prochaines activités",
+    "activePathways": "Parcours actifs",
+    "upcomingSessions": "Prochaines sessions",
+    "recentProducts": "Produits récents",
+    "progress": "Progression",
+    "notifications": "Notifications",
+    "noNotifications": "Aucune notification",
+    "aiSuggestions": "Suggestions IA",
+    "activeCourses": "Cours actifs",
+    "weeklyGoal": "Objectif hebdomadaire",
+    "studyTime": "Temps d'étude",
+    "weeklyActivity": "Activité hebdomadaire",
+    "stats": {
+      "totalPurchases": "Total des achats",
+      "totalRevenue": "Revenus totaux",
+      "activeCourses": "Cours actifs",
+      "completedProjects": "Projets terminés"
+    },
+    "estimatedRevenue": "Revenus estimés",
+    "thisMonth": "Ce mois-ci",
+    "thisWeek": "Cette semaine",
+    "revenueSources": "Sources de revenus",
+    "courses": "Cours",
+    "products": "Produits",
+    "investments": "Investissements",
+    "upcomingEvents": "Événements à venir",
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "noUpcomingEvents": "Aucun événement à venir",
+    "startCourse": "Commencer le cours"
+  },
+  "profile": {
+    "viewProfile": "Voir le profil",
+    "accessDashboard": "Accéder au dashboard",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Tout marquer comme lu",
+    "noNotifications": "Aucune notification",
+    "viewAll": "Voir toutes",
+    "justNow": "À l'instant",
+    "minutesAgo": "Il y a {{count}} minute",
+    "minutesAgo_plural": "Il y a {{count}} minutes",
+    "hoursAgo": "Il y a {{count}} heure",
+    "hoursAgo_plural": "Il y a {{count}} heures",
+    "daysAgo": "Il y a {{count}} jour",
+    "daysAgo_plural": "Il y a {{count}} jours",
+    "categories": {
+      "course": "Cours",
+      "revenue": "Revenus",
+      "live": "Sessions live",
+      "system": "Système",
+      "reminder": "Rappels"
+    }
+  },
+  "language": {
+    "selector": "Sélecteur de langue",
+    "selectLanguage": "Sélectionner une langue"
+  },
+  "theme": {
+    "toggle": "Basculer le thème",
+    "switchToLight": "Passer au mode clair",
+    "switchToDark": "Passer au mode sombre"
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "email": "Email",
+      "password": "Mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "demo": "Utiliser la démo"
+    },
+    "register": {
+      "title": "Inscription",
+      "name": "Nom complet",
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "agree": "J'accepte les conditions d'utilisation",
+      "submit": "S'inscrire"
+    }
+  },
+  "errors": {
+    "network": "Erreur de réseau",
+    "unauthorized": "Non autorisé",
+    "notFound": "Page non trouvée",
+    "serverError": "Erreur serveur",
+    "validation": "Erreur de validation"
+  }
+} 
